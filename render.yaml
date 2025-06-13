@@ -1,8 +1,7 @@
 services:
   - type: web
-    name: helpgym-api
+    name: helpgym-backend
     env: java
     buildCommand: ./mvnw clean install
-    startCommand: java -jar target/*.jar
-    region: oregon
+    startCommand: java -jar target/helpgym_backend-0.0.1-SNAPSHOT.jar
     plan: free
