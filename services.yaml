@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: helpgym-api
+    env: java
+    buildCommand: ./backend/mvnw clean install
+    startCommand: java -jar backend/target/*.jar
+    rootDir: backend
