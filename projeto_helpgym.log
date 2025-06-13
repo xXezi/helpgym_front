@@ -1,0 +1,205 @@
+[2025-04-21 18:57:48] \033[0;34m==================================================\033[0m
+[2025-04-21 18:57:48] \033[0;34m       INICIANDO PROJETO HELPGYM                  \033[0m
+[2025-04-21 18:57:48] \033[0;34m==================================================\033[0m
+[2025-04-21 18:57:48] Iniciando execução do script em Mon Apr 21 18:57:48 -03 2025
+[2025-04-21 18:57:48] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo
+[2025-04-21 18:57:48] Conteúdo da pasta backend:
+total 24
+drwxrwxr-x@  6 gabrielsoares  staff   192 Apr 21 18:47 .
+drwxr-xr-x@ 11 gabrielsoares  staff   352 Apr 21 18:57 ..
+-rw-r--r--@  1 gabrielsoares  staff  6148 Apr 21 18:48 .DS_Store
+-rw-r--r--@  1 gabrielsoares  staff  2501 Apr 21 17:15 pom.xml
+drwxrwxr-x@  4 gabrielsoares  staff   128 Apr 21 18:48 src
+drwxr-xr-x@  4 gabrielsoares  staff   128 Apr 21 17:28 target
+[2025-04-21 18:57:48] Conteúdo da pasta academia-app:
+total 1576
+drwxr-xr-x@   13 gabrielsoares  staff     416 Apr 21 18:47 .
+drwxr-xr-x@   11 gabrielsoares  staff     352 Apr 21 18:57 ..
+-rw-r--r--@    1 gabrielsoares  staff    6148 Apr 21 18:57 .DS_Store
+-rw-r--r--@    1 gabrielsoares  staff     636 Apr 21 18:32 .env
+drwxr-xr-x@    9 gabrielsoares  staff     288 Apr 21 18:47 .git
+-rw-r--r--@    1 gabrielsoares  staff     310 Mar 16 15:41 .gitignore
+drwxr-xr-x@    3 gabrielsoares  staff      96 Apr 21 18:47 HelpGym
+-rw-r--r--@    1 gabrielsoares  staff    3359 Mar 16 15:41 README.md
+drwxr-xr-x@ 1110 gabrielsoares  staff   35520 Apr 21 18:34 node_modules
+-rw-r--r--@    1 gabrielsoares  staff  781756 Apr 21 18:34 package-lock.json
+-rw-r--r--@    1 gabrielsoares  staff     947 Apr 21 18:34 package.json
+drwxr-xr-x@   10 gabrielsoares  staff     320 Apr 21 18:32 public
+drwxr-xr-x@   16 gabrielsoares  staff     512 Apr 21 18:57 src
+[2025-04-21 18:57:48] \n\033[0;32mIniciando o backend (Spring Boot)...\033[0m
+[2025-04-21 18:57:48] \033[1;33mO backend será executado em: http://localhost:8080/api\033[0m\n
+[2025-04-21 18:57:48] \n\033[1;33mAguardando o backend iniciar (15 segundos)...\033[0m
+[2025-04-21 18:58:03] Últimas 20 linhas do log do backend:
+[INFO] 
+[INFO] >>> spring-boot:2.7.0:run (default-cli) > test-compile @ academia-api >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ academia-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.562 s
+[INFO] Finished at: 2025-04-21T18:57:49-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources (default-resources) on project academia-api: Input length = 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[2025-04-21 18:58:09] Verificando se a API está respondendo...
+[2025-04-21 18:58:09] API respondeu com código HTTP: 401
+[2025-04-21 18:58:09] \n\033[0;32mIniciando o frontend (React)...\033[0m
+[2025-04-21 18:58:09] \033[1;33mO frontend será executado em: http://localhost:3000\033[0m\n
+[2025-04-21 18:58:19] Últimas 20 linhas do log do frontend:
+
+> academia-app@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3000.
+[2025-04-21 18:58:54] \n\033[0;32m==================================================\033[0m
+[2025-04-21 18:58:54] \033[0;32m       PROJETO INICIADO COM SUCESSO!              \033[0m
+[2025-04-21 18:58:54] \033[0;32m==================================================\033[0m
+[2025-04-21 18:58:55] \033[0;34mBackend:\033[0m http://localhost:8080/api (PID: 49848, Log: backend/backend_output.log)
+[2025-04-21 18:58:55] \033[0;34mFrontend:\033[0m http://localhost:3000 (PID: 49885, Log: academia-app/frontend_output.log)
+[2025-04-21 18:58:55] \n\033[1;33mPara encerrar os processos, execute: ./stop-project.sh\033[0m
+[2025-04-21 18:58:55] \033[1;33mPara ver os logs do backend: cat backend/backend_output.log\033[0m
+[2025-04-21 18:58:55] \033[1;33mPara ver os logs do frontend: cat academia-app/frontend_output.log\033[0m
+[2025-04-21 19:02:21] \033[0;34m==================================================\033[0m
+[2025-04-21 19:02:21] \033[0;34m       INICIANDO PROJETO HELPGYM                  \033[0m
+[2025-04-21 19:02:21] \033[0;34m==================================================\033[0m
+[2025-04-21 19:02:21] Iniciando execução do script em Mon Apr 21 19:02:21 -03 2025
+[2025-04-21 19:02:21] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo
+[2025-04-21 19:02:21] Conteúdo da pasta backend:
+total 40
+drwxrwxr-x@  8 gabrielsoares  staff   256 Apr 21 18:57 .
+drwxr-xr-x@ 14 gabrielsoares  staff   448 Apr 21 19:00 ..
+-rw-r--r--@  1 gabrielsoares  staff  6148 Apr 21 18:48 .DS_Store
+-rw-r--r--@  1 gabrielsoares  staff  1460 Apr 21 18:57 backend_output.log
+-rw-r--r--@  1 gabrielsoares  staff  2501 Apr 21 17:15 pom.xml
+-rw-r--r--@  1 gabrielsoares  staff   294 Apr 21 18:57 projeto_helpgym.log
+drwxrwxr-x@  4 gabrielsoares  staff   128 Apr 21 18:48 src
+drwxr-xr-x@  4 gabrielsoares  staff   128 Apr 21 17:28 target
+[2025-04-21 19:02:21] Conteúdo da pasta academia-app:
+total 1592
+drwxr-xr-x@   15 gabrielsoares  staff     480 Apr 21 18:58 .
+drwxr-xr-x@   14 gabrielsoares  staff     448 Apr 21 19:00 ..
+-rw-r--r--@    1 gabrielsoares  staff    6148 Apr 21 18:57 .DS_Store
+-rw-r--r--@    1 gabrielsoares  staff     636 Apr 21 18:32 .env
+drwxr-xr-x@   10 gabrielsoares  staff     320 Apr 21 19:00 .git
+-rw-r--r--@    1 gabrielsoares  staff     310 Mar 16 15:41 .gitignore
+drwxr-xr-x@    3 gabrielsoares  staff      96 Apr 21 18:47 HelpGym
+-rw-r--r--@    1 gabrielsoares  staff    3359 Mar 16 15:41 README.md
+-rw-r--r--@    1 gabrielsoares  staff      94 Apr 21 18:58 frontend_output.log
+drwxr-xr-x@ 1110 gabrielsoares  staff   35520 Apr 21 18:34 node_modules
+-rw-r--r--@    1 gabrielsoares  staff  781756 Apr 21 18:34 package-lock.json
+-rw-r--r--@    1 gabrielsoares  staff     947 Apr 21 18:34 package.json
+-rw-r--r--@    1 gabrielsoares  staff     460 Apr 21 18:58 projeto_helpgym.log
+drwxr-xr-x@   10 gabrielsoares  staff     320 Apr 21 18:32 public
+drwxr-xr-x@   16 gabrielsoares  staff     512 Apr 21 18:57 src
+[2025-04-21 19:02:21] \033[1;33mAPI já está em execução na porta 8080. Ignorando inicialização do backend.\033[0m
+[2025-04-21 19:02:21] \033[1;33mFrontend já está em execução na porta 3000. Encerrando para reiniciar...\033[0m
+[2025-04-21 19:02:21] Encerrando processo na porta 3000 (PID: 44616
+49345)...
+[2025-04-21 19:02:23] \033[0;32mFrontend anterior encerrado com sucesso.\033[0m
+[2025-04-21 19:02:25] \n\033[0;32mIniciando o frontend (React)...\033[0m
+[2025-04-21 19:02:25] \033[1;33mO frontend será executado em: http://localhost:3000\033[0m\n
+[2025-04-21 19:02:35] \033[0;32mFrontend parece estar rodando corretamente.\033[0m
+[2025-04-21 19:02:35] \n\033[0;32m==================================================\033[0m
+[2025-04-21 19:02:35] \033[0;32m       PROJETO INICIADO COM SUCESSO!              \033[0m
+[2025-04-21 19:02:35] \033[0;32m==================================================\033[0m
+[2025-04-21 19:02:35] \033[0;34mBackend:\033[0m http://localhost:8080/api (já estava em execução)
+[2025-04-21 19:02:35] \033[0;34mFrontend:\033[0m http://localhost:3000 (PID: 50394, Log: academia-app/frontend_output.log)
+[2025-04-21 19:02:35] \n\033[1;33mPara encerrar os processos, execute: ./stop-project.sh\033[0m
+[2025-04-21 19:02:35] \033[1;33mPara ver os logs do frontend: cat academia-app/frontend_output.log\033[0m
+[2025-04-21 19:08:02] \033[0;34m==================================================\033[0m
+[2025-04-21 19:08:02] \033[0;34m       INICIANDO PROJETO HELPGYM                  \033[0m
+[2025-04-21 19:08:02] \033[0;34m==================================================\033[0m
+[2025-04-21 19:08:02] Iniciando execução do script em Mon Apr 21 19:08:02 -03 2025
+[2025-04-21 19:08:02] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo
+[2025-04-21 19:08:02] \033[1;33mAPI já está em execução na porta 8080. Ignorando inicialização do backend.\033[0m
+[2025-04-21 19:08:02] \033[1;33mFrontend já está em execução na porta 3000. Encerrando para reiniciar...\033[0m
+[2025-04-21 19:08:02] Encerrando processo na porta 3000 (PID: 50421
+50468)...
+[2025-04-21 19:08:04] \033[0;32mFrontend anterior encerrado com sucesso.\033[0m
+[2025-04-21 19:08:06] \n\033[0;32mPreparando o frontend (React)...\033[0m
+[2025-04-21 19:08:06] \033[1;33mO frontend será executado em: http://localhost:3000\033[0m\n
+[2025-04-21 19:08:26] \033[0;32mFrontend parece estar rodando corretamente.\033[0m
+[2025-04-21 19:08:26] \n\033[0;32m==================================================\033[0m
+[2025-04-21 19:08:26] \033[0;32m       PROJETO INICIADO COM SUCESSO!              \033[0m
+[2025-04-21 19:08:26] \033[0;32m==================================================\033[0m
+[2025-04-21 19:08:26] \033[0;34mBackend:\033[0m http://localhost:8080/api (já estava em execução)
+[2025-04-21 19:08:26] \033[0;34mFrontend:\033[0m http://localhost:3000 (PID: 50939, Log: academia-app/frontend_output.log)
+[2025-04-21 19:08:26] \n\033[1;33mPara encerrar os processos, execute: ./stop-project.sh\033[0m
+[2025-04-21 19:08:26] \033[1;33mPara ver os logs do frontend: cat academia-app/frontend_output.log\033[0m
+[2025-04-21 19:21:33] \033[0;34m==================================================\033[0m
+[2025-04-21 19:21:33] \033[0;34m       INICIANDO PROJETO HELPGYM                  \033[0m
+[2025-04-21 19:21:33] \033[0;34m==================================================\033[0m
+[2025-04-21 19:21:33] Iniciando execução do script em Mon Apr 21 19:21:33 -03 2025
+[2025-04-21 19:21:33] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo
+[2025-04-21 19:21:33] \033[1;33mAPI já está em execução na porta 8080. Ignorando inicialização do backend.\033[0m
+[2025-04-21 19:21:33] \033[1;33mFrontend já está em execução na porta 3000. Encerrando para reiniciar...\033[0m
+[2025-04-21 19:21:33] Encerrando processo na porta 3000 (PID: 945
+50966
+51217)...
+[2025-04-21 19:21:35] \033[0;32mFrontend anterior encerrado com sucesso.\033[0m
+[2025-04-21 19:21:37] \n\033[0;32mPreparando o frontend (React)...\033[0m
+[2025-04-21 19:21:37] \033[1;33mO frontend será executado em: http://localhost:3000\033[0m\n
+[2025-04-21 19:22:14] \033[0;32mFrontend parece estar rodando corretamente.\033[0m
+[2025-04-21 19:22:14] \n\033[0;32m==================================================\033[0m
+[2025-04-21 19:22:14] \033[0;32m       PROJETO INICIADO COM SUCESSO!              \033[0m
+[2025-04-21 19:22:14] \033[0;32m==================================================\033[0m
+[2025-04-21 19:22:14] \033[0;34mBackend:\033[0m http://localhost:8080/api (já estava em execução)
+[2025-04-21 19:22:14] \033[0;34mFrontend:\033[0m http://localhost:3000 (PID: 53310, Log: academia-app/frontend_output.log)
+[2025-04-21 19:22:14] \n\033[1;33mPara encerrar os processos, execute: ./stop-project.sh\033[0m
+[2025-04-21 19:22:14] \033[1;33mPara ver os logs do frontend: cat academia-app/frontend_output.log\033[0m
+[2025-04-21 19:36:14] \033[0;34m==================================================\033[0m
+[2025-04-21 19:36:14] \033[0;34m       INICIANDO PROJETO HELPGYM                  \033[0m
+[2025-04-21 19:36:14] \033[0;34m==================================================\033[0m
+[2025-04-21 19:36:14] Iniciando execução do script em Mon Apr 21 19:36:14 -03 2025
+[2025-04-21 19:36:14] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo
+[2025-04-21 19:36:14] \033[1;33mAPI já está em execução na porta 8080. Ignorando inicialização do backend.\033[0m
+[2025-04-21 19:36:14] \033[1;33mFrontend já está em execução na porta 3000. Encerrando para reiniciar...\033[0m
+[2025-04-21 19:36:14] Encerrando processo na porta 3000 (PID: 51363
+53337)...
+[2025-04-21 19:36:16] \033[0;32mFrontend anterior encerrado com sucesso.\033[0m
+[2025-04-21 19:36:18] \n\033[0;32mPreparando o frontend (React)...\033[0m
+[2025-04-21 19:36:18] \033[1;33mO frontend será executado em: http://localhost:3000\033[0m\n
+[2025-04-21 19:36:31] \033[0;32mFrontend parece estar rodando corretamente.\033[0m
+[2025-04-21 19:36:31] \n\033[0;32m==================================================\033[0m
+[2025-04-21 19:36:31] \033[0;32m       PROJETO INICIADO COM SUCESSO!              \033[0m
+[2025-04-21 19:36:31] \033[0;32m==================================================\033[0m
+[2025-04-21 19:36:31] \033[0;34mBackend:\033[0m http://localhost:8080/api (já estava em execução)
+[2025-04-21 19:36:31] \033[0;34mFrontend:\033[0m http://localhost:3000 (PID: 54468, Log: academia-app/frontend_output.log)
+[2025-04-21 19:36:31] \n\033[1;33mPara encerrar os processos, execute: ./stop-project.sh\033[0m
+[2025-04-21 19:36:31] \033[1;33mPara ver os logs do frontend: cat academia-app/frontend_output.log\033[0m
+[2025-04-21 19:45:44] \033[0;34m==================================================\033[0m
+[2025-04-21 19:45:44] \033[0;34m       INSTALAÇÃO COMPLETA DO PROJETO HELPGYM      \033[0m
+[2025-04-21 19:45:44] \033[0;34m==================================================\033[0m
+[2025-04-21 19:45:44] Iniciando instalação em Mon Apr 21 19:45:44 -03 2025
+[2025-04-21 19:45:44] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo
+[2025-04-21 19:45:44] \n\033[0;32mConfigurando diretório de vídeos...\033[0m
+[2025-04-21 19:45:44] \033[0;32mVídeo de background já existe.\033[0m
+[2025-04-21 19:45:44] \n\033[0;32mConfigurando o backend...\033[0m
+[2025-04-21 19:45:46] \n\033[0;32mConfigurando o frontend...\033[0m
+[2025-04-21 19:47:17] \n\033[0;32mCriando script para iniciar o projeto...\033[0m
+[2025-04-21 19:47:17] \n\033[0;32m==================================================\033[0m
+[2025-04-21 19:47:17] \033[0;32m       INSTALAÇÃO CONCLUÍDA COM SUCESSO!         \033[0m
+[2025-04-21 19:47:17] \033[0;32m==================================================\033[0m
+[2025-04-21 19:47:17] \n\033[0;34mResumo da instalação:\033[0m
+[2025-04-21 19:47:17] 1. Backend configurado
+[2025-04-21 19:47:17] 2. Frontend configurado com todas as dependências
+[2025-04-21 19:47:17] 3. Componentes React criados/corrigidos
+[2025-04-21 19:47:17] 4. Serviços de API configurados
+[2025-04-21 19:47:17] 5. Vídeo de background configurado
+[2025-04-21 19:47:17] 6. Scripts de inicialização criados
+[2025-04-21 19:47:17] \n\033[1;33mPara iniciar o projeto, execute:\033[0m
+[2025-04-21 19:47:17] ./start-project.sh
+[2025-04-21 19:47:17] \n\033[1;33mPara parar o projeto, execute:\033[0m
+[2025-04-21 19:47:17] ./stop-project.sh
+[2025-04-21 19:47:17] \n\033[0;34mAcesse o frontend em:\033[0m http://localhost:3000
+[2025-04-21 19:47:17] \033[0;34mAcesse o backend em:\033[0m http://localhost:8080/api
+[2025-04-21 19:47:20] \n\033[0;32mIniciando o projeto...\033[0m

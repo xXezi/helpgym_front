@@ -1,0 +1,68 @@
+[2025-04-21 18:58:09] \033[0;34mVersão do Node.js detectada: v20.13.1\033[0m
+[2025-04-21 18:58:09] \033[1;33mNode.js v16+ detectado. Configurando NODE_OPTIONS para contornar restrições de OpenSSL...\033[0m
+[2025-04-21 18:58:09] \033[0;32mNODE_OPTIONS configurado: --openssl-legacy-provider\033[0m
+[2025-04-21 18:58:09] \033[1;33mIniciando o frontend com: npm start (logs em frontend_output.log)\033[0m
+[2025-04-21 18:58:09] Frontend iniciado com PID: 49885
+[2025-04-21 19:02:25] \033[0;34mVersão do Node.js detectada: v20.13.1\033[0m
+[2025-04-21 19:02:25] \033[1;33mNode.js v16+ detectado. Configurando NODE_OPTIONS para contornar restrições de OpenSSL...\033[0m
+[2025-04-21 19:02:25] \033[0;32mNODE_OPTIONS configurado: --openssl-legacy-provider\033[0m
+[2025-04-21 19:02:25] \033[1;33mIniciando o frontend com: npm start (logs em frontend_output.log)\033[0m
+[2025-04-21 19:02:25] Frontend iniciado com PID: 50394
+[2025-04-21 19:08:06] \033[0;34mVerificando e corrigindo problemas com o React Router...\033[0m
+[2025-04-21 19:08:06] Criando arquivo .env com configurações necessárias...
+[2025-04-21 19:08:06] \033[0;32mDependências já instaladas. Verificando versões do React Router...\033[0m
+[2025-04-21 19:08:07] Versão atual do React Router DOM: └── react-router-dom@7.5.1
+[2025-04-21 19:08:07] \033[1;33mInstalando versão compatível do React Router...\033[0m
+[2025-04-21 19:08:16] \033[0;34mVerificando e corrigindo componentes React...\033[0m
+[2025-04-21 19:08:16] \033[0;34mVersão do Node.js detectada: v20.13.1\033[0m
+[2025-04-21 19:08:16] \033[1;33mNode.js v16+ detectado. Configurando NODE_OPTIONS para contornar restrições de OpenSSL...\033[0m
+[2025-04-21 19:08:16] \033[0;32mNODE_OPTIONS configurado: --openssl-legacy-provider\033[0m
+[2025-04-21 19:08:16] \033[1;33mIniciando o frontend com: npm start (logs em frontend_output.log)\033[0m
+[2025-04-21 19:08:16] Frontend iniciado com PID: 50939
+[2025-04-21 19:21:17] \033[0;34m==================================================\033[0m
+[2025-04-21 19:21:17] \033[0;34m       INICIANDO PROJETO HELPGYM                  \033[0m
+[2025-04-21 19:21:17] \033[0;34m==================================================\033[0m
+[2025-04-21 19:21:17] Iniciando execução do script em Mon Apr 21 19:21:17 -03 2025
+[2025-04-21 19:21:17] Diretório atual: /Users/gabrielsoares/Downloads/academia-projeto-completo/academia-app
+[2025-04-21 19:21:17] \033[1;33mAtenção: Você não parece estar na pasta 'academia-projeto-completo'.\033[0m
+[2025-04-21 19:21:17] \033[1;33mEste script deve ser executado dentro da pasta principal do projeto.\033[0m
+[2025-04-21 19:21:37] Criando arquivo .env com configurações necessárias...
+[2025-04-21 19:21:37] \033[0;32mDependências já instaladas. Verificando versões do React Router...\033[0m
+[2025-04-21 19:21:38] Versão atual do React Router DOM: └── react-router-dom@5.3.0
+[2025-04-21 19:21:38] \033[1;33mInstalando versão compatível do React Router...\033[0m
+[2025-04-21 19:21:52] \033[1;33mInstalando react-icons...\033[0m
+[2025-04-21 19:21:57] \033[1;33mInstalando react-markdown...\033[0m
+[2025-04-21 19:22:04] \033[0;34mVerificando e corrigindo componentes React...\033[0m
+[2025-04-21 19:22:04] \033[0;34mVersão do Node.js detectada: v20.13.1\033[0m
+[2025-04-21 19:22:04] \033[1;33mNode.js v16+ detectado. Configurando NODE_OPTIONS para contornar restrições de OpenSSL...\033[0m
+[2025-04-21 19:22:04] \033[0;32mNODE_OPTIONS configurado: --openssl-legacy-provider\033[0m
+[2025-04-21 19:22:04] \033[1;33mIniciando o frontend com: npm start (logs em frontend_output.log)\033[0m
+[2025-04-21 19:22:04] Frontend iniciado com PID: 53310
+[2025-04-21 19:36:18] Criando arquivo .env com configurações necessárias...
+[2025-04-21 19:36:18] \033[0;32mDependências já instaladas. Verificando versões do React Router...\033[0m
+[2025-04-21 19:36:19] Versão atual do React Router DOM: └── react-router-dom@6.3.0
+[2025-04-21 19:36:21] \033[0;34mVerificando e corrigindo componentes React...\033[0m
+[2025-04-21 19:36:21] \033[0;34mVersão do Node.js detectada: v20.13.1\033[0m
+[2025-04-21 19:36:21] \033[1;33mNode.js v16+ detectado. Configurando NODE_OPTIONS para contornar restrições de OpenSSL...\033[0m
+[2025-04-21 19:36:21] \033[0;32mNODE_OPTIONS configurado: --openssl-legacy-provider\033[0m
+[2025-04-21 19:36:21] \033[1;33mIniciando o frontend com: npm start (logs em frontend_output.log)\033[0m
+[2025-04-21 19:36:21] Frontend iniciado com PID: 54468
+[2025-04-21 19:45:46] Criando arquivo .env com configurações necessárias...
+[2025-04-21 19:45:46] \033[1;33mInstalando dependências do frontend...\033[0m
+[2025-04-21 19:45:46] Removendo node_modules existente para instalação limpa...
+[2025-04-21 19:45:51] Removendo package-lock.json para evitar conflitos...
+[2025-04-21 19:45:51] Atualizando package.json com versões compatíveis...
+[2025-04-21 19:45:51] Instalando dependências do frontend (isso pode levar alguns minutos)...
+[2025-04-21 19:47:16] \n\033[0;34mVerificando e corrigindo componentes React...\033[0m
+[2025-04-21 19:47:16] Criando arquivo de animações...
+[2025-04-21 19:47:16] Corrigindo App.js...
+[2025-04-21 19:47:16] Corrigindo index.js...
+[2025-04-21 19:47:16] Atualizando o componente HomePage para usar o vídeo local...
+[2025-04-21 19:47:16] Criando componente ArticleModal...
+[2025-04-21 19:47:16] Criando componente LoginForm...
+[2025-04-21 19:47:16] Criando componente RegisterForm...
+[2025-04-21 19:47:16] Criando componente Dashboard...
+[2025-04-21 19:47:16] \n\033[0;34mCriando serviços para API...\033[0m
+[2025-04-21 19:47:16] \033[0;34mVersão do Node.js detectada: v20.13.1\033[0m
+[2025-04-21 19:47:17] \033[1;33mNode.js v16+ detectado. Configurando NODE_OPTIONS para contornar restrições de OpenSSL...\033[0m
+[2025-04-21 19:47:17] \033[0;32mNODE_OPTIONS configurado: --openssl-legacy-provider\033[0m

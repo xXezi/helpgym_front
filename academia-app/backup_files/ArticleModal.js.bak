@@ -1,0 +1,445 @@
+// src/components/Modal/ArticleModal.js
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { fadeIn, slideIn } from '../../styles/animations';
+import { FaHeart, FaRegHeart, FaSpinner } from 'react-icons/fa';
+import artigoService from '../../services/artigoService';
+
+function ArticleModal({ articleId, onClose }) {
+    // Estado para armazenar os dados do artigo
+    const [article, setArticle] = useState(null);
+    // Estado para controlar o carregamento
+    const [loading, setLoading] = useState(true);
+    // Estado para controlar erros
+    const [error, setError] = useState(null);
+    // Estado para os comentários
+    const [comments, setComments] = useState([]);
+    // Estado para novo comentário
+    const [newComment, setNewComment] = useState('');
+
+    // Buscar o artigo da API quando o componente for montado
+    useEffect(() => {
+        const fetchArticle = async () => {
+            try {
+                setLoading(true);
+                // Buscar o artigo pelo ID usando o artigoService
+                const articleData = await artigoService.getById(articleId);
+                setArticle(articleData);
+                
+                // Se o artigo tiver comentários, carregá-los
+                if (articleData.comentarios) {
+                    setComments(articleData.comentarios.map(comment => ({
+                        ...comment,
+                        liked: false // Inicialmente, nenhum comentário está curtido pelo usuário atual
+                    })));
+                } else {
+                    // Comentários padrão caso a API não retorne comentários
+                    setComments([
+                        {
+                            id: 1,
+                            user: "João Silva",
+                            comment: "Ótimo artigo! Muito informativo.",
+                            avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+                            likes: 5,
+                            liked: false,
+                        },
+                        {
+                            id: 2,
+                            user: "Maria Souza",
+                            comment: "Gostei das dicas, vou começar a aplicar hoje mesmo!",
+                            avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+                            likes: 12,
+                            liked: false,
+                        },
+                        {
+                            id: 3,
+                            user: "Pedro Santos",
+                            comment: "Seria legal um artigo sobre treino para ectomorfos.",
+                            avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+                            likes: 3,
+                            liked: false,
+                        },
+                    ]);
+                }
+                
+                setError(null);
+            } catch (err) {
+                console.error("Erro ao buscar artigo:", err);
+                setError("Não foi possível carregar o artigo. Por favor, tente novamente mais tarde.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (articleId) {
+            fetchArticle();
+        }
+    }, [articleId]);
+
+    // Função para dar like/deslike e atualizar na API
+    const handleLike = async (commentId, index) => {
+        try {
+            // Atualizar localmente primeiro para feedback imediato ao usuário
+            setComments((prevComments) => {
+                const newComments = [...prevComments];
+                const comment = newComments[index];
+
+                if (comment.liked) {
+                    comment.likes -= 1;
+                } else {
+                    comment.likes += 1;
+                }
+                comment.liked = !comment.liked;
+
+                return newComments;
+            });
+
+            // Enviar atualização para a API
+            // Aqui assumimos que existe um endpoint para atualizar likes de comentários
+            // Se não existir, você precisará adaptar conforme a estrutura da sua API
+            await artigoService.updateCommentLike(articleId, commentId, {
+                likes: comments[index].likes,
+                liked: comments[index].liked
+            });
+        } catch (err) {
+            console.error("Erro ao atualizar like:", err);
+            // Reverter a mudança local em caso de erro na API
+            setComments((prevComments) => {
+                const newComments = [...prevComments];
+                const comment = newComments[index];
+
+                if (comment.liked) {
+                    comment.likes -= 1;
+                } else {
+                    comment.likes += 1;
+                }
+                comment.liked = !comment.liked;
+
+                return newComments;
+            });
+            
+            // Mostrar mensagem de erro ao usuário
+            alert("Não foi possível atualizar o like. Por favor, tente novamente.");
+        }
+    };
+
+    // Função para adicionar novo comentário
+    const handleAddComment = async () => {
+        if (!newComment.trim()) return;
+        
+        try {
+            // Criar objeto do novo comentário
+            const commentData = {
+                user: "Usuário Atual", // Idealmente, pegar do contexto de autenticação
+                comment: newComment,
+                avatar: "https://randomuser.me/api/portraits/lego/1.jpg", // Avatar padrão
+                likes: 0,
+                liked: false
+            };
+            
+            // Adicionar localmente primeiro para feedback imediato
+            setComments(prev => [...prev, commentData]);
+            setNewComment(''); // Limpar campo de entrada
+            
+            // Enviar para a API
+            // Aqui assumimos que existe um endpoint para adicionar comentários
+            // Se não existir, você precisará adaptar conforme a estrutura da sua API
+            const response = await artigoService.addComment(articleId, commentData);
+            
+            // Atualizar o comentário local com os dados retornados da API (incluindo ID)
+            setComments(prev => {
+                const newComments = [...prev];
+                newComments[newComments.length - 1] = response.data;
+                return newComments;
+            });
+        } catch (err) {
+            console.error("Erro ao adicionar comentário:", err);
+            
+            // Remover o comentário adicionado localmente em caso de erro
+            setComments(prev => prev.slice(0, -1));
+            setNewComment(commentData.comment); // Restaurar o texto do comentário no campo
+            
+            // Mostrar mensagem de erro ao usuário
+            alert("Não foi possível adicionar o comentário. Por favor, tente novamente.");
+        }
+    };
+
+    // --- Definições dos Componentes Estilizados (DENTRO da função) ---
+    const Overlay = styled.div`
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        animation: ${fadeIn} 0.3s ease;
+    `;
+
+    const ModalContainer = styled.div`
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        max-width: 80%;
+        width: 800px;
+        position: relative;
+        overflow-y: auto;
+        max-height: 90vh;
+        animation: ${slideIn} 0.4s ease;
+    `;
+
+    const CloseButton = styled.button`
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #888;
+        &:hover {
+            color: black;
+        }
+    `;
+
+    const ArticleImage = styled.img`
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    `;
+
+    const ArticleTitle = styled.h2`
+        color: #333;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        text-align: center;
+    `;
+
+    const ArticleContent = styled.div`
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        text-align: justify;
+        padding: 20px;
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #ccc;
+            padding-left: 1em;
+            margin-left: 1em;
+            margin-bottom: 1em;
+        }
+    `;
+
+    const CommentsSection = styled.div`
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    `;
+
+    const Comment = styled.div`
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    `;
+
+    const Avatar = styled.img`
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    `;
+
+    const CommentText = styled.p`
+        color: #666;
+        font-size: 1em;
+        line-height: 1.4;
+        flex: 1;
+        strong{
+        color: black;
+        }
+    `;
+
+    const LikeButton = styled.button`
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #888;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        padding: 0;
+        outline: none;
+
+        &.liked {
+            color: red;
+        }
+        span {
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+    `;
+
+    const LoadingContainer = styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        
+        svg {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+
+    const ErrorContainer = styled.div`
+        color: #d9534f;
+        text-align: center;
+        padding: 20px;
+    `;
+
+    const CommentForm = styled.div`
+        display: flex;
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    `;
+
+    const CommentInput = styled.input`
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 10px;
+    `;
+
+    const SubmitButton = styled.button`
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 15px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: #0056b3;
+        }
+        
+        &:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    `;
+
+    // --- Fim das Definições ---
+
+    return (
+        <Overlay onClick={onClose}>
+            <ModalContainer onClick={(e) => e.stopPropagation()}>
+                <CloseButton onClick={onClose}>×</CloseButton>
+
+                {loading ? (
+                    <LoadingContainer>
+                        <FaSpinner size={40} />
+                    </LoadingContainer>
+                ) : error ? (
+                    <ErrorContainer>
+                        <p>{error}</p>
+                    </ErrorContainer>
+                ) : article ? (
+                    <>
+                        <ArticleImage src={article.image} alt={article.title} />
+                        <ArticleTitle>{article.title}</ArticleTitle>
+                        <ArticleContent dangerouslySetInnerHTML={{ __html: article.fullContent }} />
+                        
+                        <CommentsSection>
+                            <h3>Comentários ({comments.length})</h3>
+                            
+                            {comments.map((comment, index) => (
+                                <Comment key={comment.id || index}>
+                                    <Avatar src={comment.avatar} alt={`Avatar de ${comment.user}`} />
+                                    <CommentText>
+                                        <strong>{comment.user}:</strong> {comment.comment}
+                                    </CommentText>
+                                    <LikeButton
+                                        onClick={() => handleLike(comment.id, index)}
+                                        className={comment.liked ? "liked" : ""}
+                                    >
+                                        {comment.liked ? <FaHeart /> : <FaRegHeart />}
+                                        <span>{comment.likes}</span>
+                                    </LikeButton>
+                                </Comment>
+                            ))}
+                            
+                            <CommentForm>
+                                <CommentInput
+                                    type="text"
+                                    placeholder="Adicione um comentário..."
+                                    value={newComment}
+                                    onChange={(e) => setNewComment(e.target.value)}
+                                />
+                                <SubmitButton 
+                                    onClick={handleAddComment}
+                                    disabled={!newComment.trim()}
+                                >
+                                    Comentar
+                                </SubmitButton>
+                            </CommentForm>
+                        </CommentsSection>
+                    </>
+                ) : (
+                    <p>Artigo não encontrado.</p>
+                )}
+            </ModalContainer>
+        </Overlay>
+    );
+}
+
+export default ArticleModal;

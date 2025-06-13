@@ -1,0 +1,14 @@
+
+> academia-app@0.1.0 start
+> react-scripts start
+
+Attempting to bind to HOST environment variable: localhost
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://bit.ly/CRA-advanced-config
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://localhost:3000/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /Users/gabrielsoares/Downloads/academia-projeto-completo/academia-app/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
